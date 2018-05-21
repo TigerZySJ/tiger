@@ -348,27 +348,88 @@ void transDec(S_table venv,S_table tenv,A_dec d)
 {
 	switch(d->kind){
 		case A_varDec:{
+			//var id:=exp
+			//var id:type-id:=exp
+			//首先exp必须合法且返回类型与type-id相同
+			//特殊的，id不能等于"int"或者"string"
+			if (d->u.var.init == NULL) {
+				EM_error(v->pos, "var declaration must be initialize\n");
+				assert(0);
+			}
 			struct expty e= transExp(venv,tenv,d->u.var.init);
+			if (e.ty!=NULL&&actualTy(e.ty) != d->u.var.typ) {
+				EM_error(v->pos, "var declaration type error\n");
+				assert(0);
+			}
+			if (S_name(d->u.var.var) == "int" || S_name(d->u.var.var) == "string") {
+				EM_error(v->pos, "var declaration use invalid id\n");
+				assert(0);
+			}
 			S_enter(venv,d->u.var.var,E_VarEntry(e.ty));
+			
 		}
 		case A_typeDec:{
-			S_enter(tenv,d->u.type->head->name,
-					transTy(d->u.type->head->ty));
+			//type type-id=ty
+			//ty=type-id
+			//ty={type-fields}
+			//ty=array of type-id
+			//首先避免定义int 或string等基本类型
+			//查找每个type是否存在,如果存在则要将其扔进venv中
+			A_nametyList namelist = d->u.type;
+			while (namelist->head!=NULL) {
+				if (S_name(namelist->head->name) == "int" || S_name(namelist->head->name) == "string") {
+					EM_error(v->pos, "type declaration use invalid id\n");
+					assert(0);
+				}
+				Ty_ty ty = transTy(tenv,d->u.type->head->ty);
+				//防止递归
+				if(actualTy(ty)==NULL)
+				{
+					EM_error(v->pos, "type declaration use unknown type-id\n");
+					assert(0);
+				}
+				S_enter(tenv, namelist->head->name,
+					transTy(namelist->head->ty));
+				namelist = namelist->tail;
+			}
+			
 		}
 		case A_functionDec:{
-			A_fundec f=d->u.function->head;
-			Ty_ty resultTy=S_look(tenv,f->result);
-			Ty_tyList formalTys=makeFormalTyList(tenv,f->params);
-			S_enter(venv,f->name,E_FunEntry(formalTys,resultTy));
-			S_beginScope(venv);
-			{
-				A_fieldList l; Ty_tyList t;
-				for(l=f->params,t=formalTys;l;l=l->tail,t=t->tail)
-					S_enter(venv,l->head->name,E_VarEntry(t->head));
+			//function id(type-fields):=exp
+			//function id(type-fields):type-id=exp
+			//将type-fields进行检查，并且将函数压入venv中
+			//将type-fields声明的变量压入venv中
+			//注意函数名不能为"int"或者"string"
+			while (d->u.function->head) {
+				A_fundec f = d->u.function->head;
+				Ty_ty resultTy = S_look(tenv, f->result);
+				//Ty_tyList formalTys = makeFormalTyList(tenv, f->params);
+				Ty_tyList formalTys;
+				A_fieldList tmpfieldList =f->params;
+				if (S_name(f->name) == "int" || S_name(f->name) == "string") {
+					EM_error(v->pos, "function declaration use invalid id\n");
+					assert(0);
+				}
+				while (tmpfieldList->head) {
+					Ty_ty ty = (Ty_ty)S_look(tenv, tmpfieldList->head->typ);
+					if (ty == NULL) {
+						EM_error(v->pos, "function declaration has unknown type\n");
+						assert(0);
+					}
+					tylist = Ty_TyList(ty, tylist);
+					tmpfieldList = tmpfieldList->tail;
+				}
+				S_enter(venv, f->name, E_FunEntry(formalTys, resultTy));
+				S_beginScope(venv);
+				{
+					A_fieldList l; Ty_tyList t;
+					for (l = f->params, t = formalTys; l; l = l->tail, t = t->tail)
+						S_enter(venv, l->head->name, E_VarEntry(t->head));
+				}
+				transExp(venv, tenv, d->u.function->body);
+				S_beginScope(venv);
+				d->u.function = d->u.function->tail;
 			}
-			transExp(venv,tenv,d->u.function->body);
-			S_beginScope(venv);
-			break;
 		}
 	}
 }
