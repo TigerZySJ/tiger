@@ -1,0 +1,43 @@
+ SEQ(
+  EXP(
+   CONST 0),
+  SEQ(
+   MOVE(
+    TEMP t106,
+    TEMP t105),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     TEMP t104),
+    SEQ(
+     MOVE(
+      TEMP t108,
+      TEMP t103),
+     SEQ(
+      MOVE(
+       TEMP t102,
+       ESEQ(
+        SEQ(
+         EXP(
+          CONST 0),
+         MOVE(
+          TEMP t100,
+          CALL(
+           NAME initArray,
+            CONST 10,
+            CONST 0))),
+        TEMP t100)),
+      SEQ(
+       MOVE(
+        TEMP t103,
+        TEMP t108),
+       SEQ(
+        MOVE(
+         TEMP t104,
+         TEMP t107),
+        SEQ(
+         MOVE(
+          TEMP t105,
+          TEMP t106),
+         EXP(
+          CONST 0)))))))))

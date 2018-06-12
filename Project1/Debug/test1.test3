@@ -1,0 +1,25 @@
+START main
+L2
+movl %ebx,105
+movl %esi,106
+movl %edi,107
+addl %ebp, 121
+movl $(4), 123
+addl 121, 121
+movl 121,112
+movl $(initArray), 126
+movl $(10), 127
+movl $(0), 128
+call 126
+movl 126,111
+movl 111,(112)
+move 4(%ebp), 133
+movl 133,%eax
+movl 107,%edi
+movl 106,%esi
+movl 105,%ebx
+movl $(L1), 142
+jmp 142
+L1
+
+END main

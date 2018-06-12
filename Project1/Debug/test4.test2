@@ -1,0 +1,101 @@
+START L1
+L6
+movl %ebx,105
+movl %esi,106
+movl %edi,107
+move 0(%ebp), 125
+movl $(0), 127
+cmp 125,127
+je L2
+L3
+move 0(%ebp), 130
+movl 130,116
+movl $.L1, 134
+move 0(%ebp), 137
+movl 137, 136
+movl $(1), 139
+subl 136, 136
+call 134
+movl 134,115
+movl 116, 141
+imull 141, 141
+movl 141,101
+L4
+movl 107,%edi
+movl 106,%esi
+movl 105,%ebx
+movl $.L5, 154
+jmp L5
+L2
+movl $(1), 157
+movl 157,101
+movl $.L4, 159
+jmp L4
+L5
+
+END L1
+START main
+L6
+movl %ebx,105
+movl %esi,106
+movl %edi,107
+move 0(%ebp), 125
+movl $(0), 127
+cmp 125,127
+je L2
+L3
+move 0(%ebp), 130
+movl 130,116
+movl $.L1, 134
+move 0(%ebp), 137
+movl 137, 136
+movl $(1), 139
+subl 136, 136
+call 134
+movl 134,115
+movl 116, 141
+imull 141, 141
+movl 141,101
+L4
+movl 107,%edi
+movl 106,%esi
+movl 105,%ebx
+movl $.L5, 154
+jmp L5
+L2
+movl $(1), 157
+movl 157,101
+movl $.L4, 159
+jmp L4
+L5
+L8
+movl %ebx,109
+movl %esi,110
+movl %edi,111
+move 0(%ebp), 169
+movl $(0), 171
+cmp 169,171
+je L2
+L3
+movl 116, 174
+imull 174, 174
+movl 174,101
+L4
+movl 101,%eax
+movl $.L1, 182
+movl $(10), 184
+call 182
+movl 182,%eax
+movl 111,%edi
+movl 110,%esi
+movl 109,%ebx
+movl $.L7, 192
+jmp L7
+L2
+movl $(1), 195
+movl 195,101
+movl $.L4, 197
+jmp L4
+L7
+
+END main

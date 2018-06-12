@@ -1,0 +1,27 @@
+START main
+L5
+movl %ebx,105
+movl %esi,106
+movl %edi,107
+movl $(10), 120
+movl $(20), 121
+cmp 120,121
+jg L1
+L2
+movl $(40), 124
+movl 124,100
+L3
+movl 100,%eax
+movl 107,%edi
+movl 106,%esi
+movl 105,%ebx
+movl $.L4, 135
+jmp L4
+L1
+movl $(30), 138
+movl 138,100
+movl $.L3, 140
+jmp L3
+L4
+
+END main

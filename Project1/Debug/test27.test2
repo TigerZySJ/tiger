@@ -1,0 +1,55 @@
+START L1
+L3
+movl %ebx,106
+movl %esi,107
+movl %edi,108
+move 0(%ebp), 125
+addl 125, 124
+movl $(1), 127
+addl 124, 124
+movl 108,%edi
+movl 107,%esi
+movl 106,%ebx
+movl $.L2, 135
+jmp L2
+L2
+
+END L1
+START main
+L3
+movl %ebx,106
+movl %esi,107
+movl %edi,108
+move 0(%ebp), 125
+addl 125, 124
+movl $(1), 127
+addl 124, 124
+movl 108,%edi
+movl 107,%esi
+movl 106,%ebx
+movl $.L2, 135
+jmp L2
+L2
+L5
+movl %ebx,110
+movl %esi,111
+movl %edi,112
+movl $(0), 145
+movl 145,100
+move 0(%ebp), 148
+addl 148, 147
+movl $(1), 150
+addl 147, 147
+movl 147,%eax
+movl $.L1, 153
+movl $(2), 155
+call 153
+movl 153,%eax
+movl 112,%edi
+movl 111,%esi
+movl 110,%ebx
+movl $.L4, 163
+jmp L4
+L4
+
+END main

@@ -1,0 +1,55 @@
+ SEQ(
+  EXP(
+   CONST 0),
+  SEQ(
+   MOVE(
+    TEMP t105,
+    TEMP t104),
+   SEQ(
+    MOVE(
+     TEMP t106,
+     TEMP t103),
+    SEQ(
+     MOVE(
+      TEMP t107,
+      TEMP t102),
+     SEQ(
+      MOVE(
+       TEMP t101,
+       ESEQ(
+        CJUMP(GT,
+         CONST 10,
+         CONST 20,
+         L1,L2),
+        ESEQ(
+         LABEL L1,
+         ESEQ(
+          MOVE(
+           TEMP t100,
+           CONST 30),
+          ESEQ(
+           JUMP(
+            NAME L3),
+           ESEQ(
+            LABEL L2,
+            ESEQ(
+             MOVE(
+              TEMP t100,
+              CONST 40),
+             ESEQ(
+              LABEL L3,
+              TEMP t100)))))))),
+      SEQ(
+       MOVE(
+        TEMP t102,
+        TEMP t107),
+       SEQ(
+        MOVE(
+         TEMP t103,
+         TEMP t106),
+        SEQ(
+         MOVE(
+          TEMP t104,
+          TEMP t105),
+         EXP(
+          CONST 0)))))))))

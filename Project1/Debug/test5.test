@@ -1,0 +1,68 @@
+ EXP(
+  ESEQ(
+   SEQ(
+    SEQ(
+     EXP(
+      CONST 0),
+     MOVE(
+      MEM(
+       BINOP(PLUS,
+        TEMP t101,
+        CONST 0)),
+      ESEQ(
+       MOVE(
+        TEMP t100,
+        CALL(
+         NAME allocRecord,
+          CONST 8)),
+       ESEQ(
+        MOVE(
+         MEM(
+          BINOP(PLUS,
+           TEMP t100,
+           CONST 0)),
+         CONST 0),
+        ESEQ(
+         MOVE(
+          MEM(
+           BINOP(PLUS,
+            TEMP t100,
+            CONST 4)),
+          CONST 0),
+         TEMP t100))))),
+    MOVE(
+     MEM(
+      BINOP(PLUS,
+       TEMP t101,
+       CONST 4)),
+     ESEQ(
+      MOVE(
+       TEMP t102,
+       CALL(
+        NAME allocRecord,
+         CONST 8)),
+      ESEQ(
+       MOVE(
+        MEM(
+         BINOP(PLUS,
+          TEMP t102,
+          CONST 0)),
+        MEM(
+         BINOP(PLUS,
+          TEMP t101,
+          CONST 0))),
+       ESEQ(
+        MOVE(
+         MEM(
+          BINOP(PLUS,
+           TEMP t102,
+           CONST 4)),
+         CONST 2),
+        TEMP t102))))),
+   ESEQ(
+    EXP(
+     MEM(
+      BINOP(PLUS,
+       TEMP t101,
+       CONST 0))),
+    CONST 4)))

@@ -1,0 +1,43 @@
+ LABEL L2
+ MOVE(
+  TEMP t105,
+  TEMP t104)
+ MOVE(
+  TEMP t106,
+  TEMP t103)
+ MOVE(
+  TEMP t107,
+  TEMP t102)
+ MOVE(
+  TEMP t112,
+  BINOP(PLUS,
+   TEMP t100,
+   CONST 4))
+ MOVE(
+  TEMP t111,
+  CALL(
+   NAME initArray,
+    CONST 10,
+    CONST 0))
+ MOVE(
+  MEM(
+   TEMP t112),
+  TEMP t111)
+ MOVE(
+  TEMP t101,
+  MEM(
+   BINOP(PLUS,
+    TEMP t100,
+    CONST 4)))
+ MOVE(
+  TEMP t102,
+  TEMP t107)
+ MOVE(
+  TEMP t103,
+  TEMP t106)
+ MOVE(
+  TEMP t104,
+  TEMP t105)
+ JUMP(
+  NAME L1)
+ LABEL L1

@@ -1,0 +1,36 @@
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t100,
+    CONST 4)),
+  CONST 0)
+ MOVE(
+  TEMP t101,
+  CONST 100)
+ CJUMP(GT,
+  MEM(
+   BINOP(PLUS,
+    TEMP t100,
+    CONST 4)),
+  TEMP t101,
+  L1,L2)
+ LABEL L2
+ MOVE(
+  MEM(
+   BINOP(PLUS,
+    TEMP t100,
+    CONST 4)),
+  BINOP(PLUS,
+   MEM(
+    BINOP(PLUS,
+     TEMP t100,
+     CONST 4)),
+   CONST 1))
+ CJUMP(LE,
+  MEM(
+   BINOP(PLUS,
+    TEMP t100,
+    CONST 4)),
+  TEMP t101,
+  L2,L1)
+ LABEL L1

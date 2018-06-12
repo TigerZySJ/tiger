@@ -1,0 +1,35 @@
+ SEQ(
+  EXP(
+   CONST 0),
+  SEQ(
+   MOVE(
+    TEMP t104,
+    TEMP t103),
+   SEQ(
+    MOVE(
+     TEMP t105,
+     TEMP t102),
+    SEQ(
+     MOVE(
+      TEMP t106,
+      TEMP t101),
+     SEQ(
+      EXP(
+       MEM(
+        BINOP(PLUS,
+         TEMP t100,
+         CONST 0))),
+      SEQ(
+       MOVE(
+        TEMP t101,
+        TEMP t106),
+       SEQ(
+        MOVE(
+         TEMP t102,
+         TEMP t105),
+        SEQ(
+         MOVE(
+          TEMP t103,
+          TEMP t104),
+         EXP(
+          CONST 0)))))))))

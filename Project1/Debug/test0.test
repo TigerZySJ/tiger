@@ -1,0 +1,32 @@
+ EXP(
+  ESEQ(
+   SEQ(
+    MOVE(
+     MEM(
+      BINOP(PLUS,
+       TEMP t100,
+       CONST 8)),
+     CONST 3),
+    SEQ(
+     MOVE(
+      MEM(
+       BINOP(PLUS,
+        TEMP t100,
+        CONST 4)),
+      CONST 2),
+     MOVE(
+      MEM(
+       BINOP(PLUS,
+        TEMP t100,
+        CONST 0)),
+      CONST 1))),
+   ESEQ(
+    EXP(
+     MEM(
+      BINOP(PLUS,
+       TEMP t100,
+       CONST 4))),
+    MEM(
+     BINOP(PLUS,
+      TEMP t100,
+      CONST 0)))))

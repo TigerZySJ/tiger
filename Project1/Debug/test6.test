@@ -1,0 +1,29 @@
+ EXP(
+  ESEQ(
+   SEQ(
+    MOVE(
+     TEMP t110,
+     CALL(
+      NAME L2,
+       TEMP t100,
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          TEMP t100,
+          CONST 4)),
+        CONST 1))),
+    MOVE(
+     TEMP t110,
+     CALL(
+      NAME L1,
+       TEMP t100,
+       NAME L3,
+       MEM(
+        BINOP(PLUS,
+         TEMP t100,
+         CONST 0))))),
+   CALL(
+    NAME L1,
+     TEMP t100,
+     NAME L4,
+     CONST 0)))

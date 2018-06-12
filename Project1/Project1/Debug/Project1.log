@@ -1,0 +1,43 @@
+﻿生成启动时间为 2018/6/12 19:33:55。
+     1>项目“C:\Users\sunjian\Desktop\Com\Project1\Project1\Project1.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\VS2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt driver.c
+         driver.c
+     1>c:\users\sunjian\desktop\com\project1\project1\driver.c(20): warning C4013: “F_TempMap”未定义；假设外部返回 int
+     1>c:\users\sunjian\desktop\com\project1\project1\driver.c(20): warning C4047: “=”:“Temp_map”与“int”的间接级别不同
+     1>c:\users\sunjian\desktop\com\project1\project1\driver.c(40): warning C4013: “parse”未定义；假设外部返回 int
+     1>c:\users\sunjian\desktop\com\project1\project1\driver.c(40): warning C4047: “=”:“A_exp”与“int”的间接级别不同
+     1>c:\users\sunjian\desktop\com\project1\project1\driver.c(45): warning C4013: “pr_exp”未定义；假设外部返回 int
+     1>c:\users\sunjian\desktop\com\project1\project1\driver.c(35): warning C4101: “tok”: 未引用的局部变量
+       Link:
+         D:\VS2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sunjian\Desktop\Com\Project1\Debug\Project1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\sunjian\Desktop\Com\Project1\Debug\Project1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sunjian\Desktop\Com\Project1\Debug\Project1.lib" /MACHINE:X86 Debug\absyn.obj
+         Debug\assem.obj
+         Debug\canon.obj
+         Debug\codegen.obj
+         Debug\driver.obj
+         Debug\env.obj
+         Debug\errormsg.obj
+         Debug\escape.obj
+         Debug\flowgraph.obj
+         Debug\frame.obj
+         Debug\graph.obj
+         Debug\lex.yy.obj
+         Debug\liveness.obj
+         Debug\parse.obj
+         Debug\prabsyn.obj
+         Debug\printtree.obj
+         Debug\semant.obj
+         Debug\symbol.obj
+         Debug\table.obj
+         Debug\temp.obj
+         Debug\tiger2.tab.obj
+         Debug\translate.obj
+         Debug\tree.obj
+         Debug\types.obj
+         Debug\util.obj
+         Project1.vcxproj -> C:\Users\sunjian\Desktop\Com\Project1\Debug\Project1.exe
+     1>已完成生成项目“C:\Users\sunjian\Desktop\Com\Project1\Project1\Project1.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.84

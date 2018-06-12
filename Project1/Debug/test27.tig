@@ -1,0 +1,8 @@
+/* locals hide globals */
+let
+	var b:=0
+
+	function g(a:int):int = a+1 
+in
+ g(2)
+end

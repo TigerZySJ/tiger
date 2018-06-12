@@ -1,0 +1,86 @@
+ SEQ(
+  EXP(
+   CONST 0),
+  SEQ(
+   MOVE(
+    TEMP t106,
+    TEMP t105),
+   SEQ(
+    MOVE(
+     TEMP t107,
+     TEMP t104),
+    SEQ(
+     MOVE(
+      TEMP t108,
+      TEMP t103),
+     SEQ(
+      EXP(
+       BINOP(PLUS,
+        MEM(
+         BINOP(PLUS,
+          TEMP t101,
+          CONST 0)),
+        CONST 1)),
+      SEQ(
+       MOVE(
+        TEMP t103,
+        TEMP t108),
+       SEQ(
+        MOVE(
+         TEMP t104,
+         TEMP t107),
+        SEQ(
+         MOVE(
+          TEMP t105,
+          TEMP t106),
+         EXP(
+          CONST 0)))))))))
+ SEQ(
+  EXP(
+   CONST 0),
+  SEQ(
+   MOVE(
+    TEMP t110,
+    TEMP t105),
+   SEQ(
+    MOVE(
+     TEMP t111,
+     TEMP t104),
+    SEQ(
+     MOVE(
+      TEMP t112,
+      TEMP t103),
+     SEQ(
+      MOVE(
+       TEMP t109,
+       ESEQ(
+        SEQ(
+         MOVE(
+          TEMP t100,
+          CONST 0),
+         MOVE(
+          TEMP t109,
+          BINOP(PLUS,
+           MEM(
+            BINOP(PLUS,
+             TEMP t101,
+             CONST 0)),
+           CONST 1))),
+        CALL(
+         NAME L1,
+          TEMP t101,
+          CONST 2))),
+      SEQ(
+       MOVE(
+        TEMP t103,
+        TEMP t112),
+       SEQ(
+        MOVE(
+         TEMP t104,
+         TEMP t111),
+        SEQ(
+         MOVE(
+          TEMP t105,
+          TEMP t110),
+         EXP(
+          CONST 0)))))))))

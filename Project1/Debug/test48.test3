@@ -1,0 +1,41 @@
+START main
+L4
+movl %ebx,104
+movl %esi,105
+movl %edi,106
+move 0(%ebp), 125
+movl 106,%edi
+movl 105,%esi
+movl 104,%ebx
+movl $.L3, 134
+jmp L3
+L3
+L6
+movl %ebx,108
+movl %esi,109
+movl %edi,110
+move 0(%ebp), 144
+movl 110,%edi
+movl 109,%esi
+movl 108,%ebx
+movl $.L5, 153
+jmp L5
+L5
+L8
+movl %ebx,111
+movl %esi,112
+movl %edi,113
+move 0(%ebp), 163
+movl 163,%eax
+move 0(%ebp), 166
+movl 166,%eax
+movl $(0), 169
+movl 169,%eax
+movl 113,%edi
+movl 112,%esi
+movl 111,%ebx
+movl $.L7, 177
+jmp L7
+L7
+
+END main

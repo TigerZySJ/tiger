@@ -1,0 +1,20 @@
+L1:hello
+START main
+L3
+movl %ebx,107
+movl %esi,108
+movl %edi,109
+movl $(4), 121
+movl 121,100
+movl $.L1, 123
+movl 123,102
+movl $(0), 125
+movl 125,%eax
+movl 109,%edi
+movl 108,%esi
+movl 107,%ebx
+movl $.L2, 133
+jmp L2
+L2
+
+END main
